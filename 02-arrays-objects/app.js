@@ -63,27 +63,26 @@ const notes = [
 },
 ]
 function render() {
-    listElement.innerHTML = 'sadasda'
-    for (let i = 0; i < notes.length; i++) {
-        listElement.insertAdjacentHTML('beforeend', getNoteTemplate(notes[i], i))
-    }
+  listElement.innerHTML = "";
+  for (let i = 0; i < notes.length; i++) {
+    listElement.insertAdjacentHTML("beforeend", getNoteTemplate(notes[i], i));
+  }
 }
-render()
+render();
 
 createBtn.onclick = function () {
-    if (inputElement.value.length === 0) {
-return
-    }
-    const newNote = {
-        title: inputElement.value,
-        completed: false,
-    }
-    notes.push(newNote)
-    render()
-    inputElement.value = ''
-    
-    
-}
+  if (inputElement.value.length === 0) {
+    return;
+  }
+  const newNote = {
+    title: inputElement.value,
+    completed: false,
+  };
+  notes.push(newNote);
+  render();
+  inputElement.value = "";
+  // aoba
+};
 
 function getNoteTemplate(note, index) {
     return `
